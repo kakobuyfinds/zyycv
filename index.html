@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CNShopper spreadsheet: escolher, comparar e verificar</title>
+  <meta name="description" content="Guia independente de CNShopper spreadsheet: compare sapatos e roupa, confira medidas e fotos QC e organize os custos antes de decidir.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#9b402f">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:title" content="CNShopper spreadsheet: escolher, comparar e verificar">
+  <meta property="og:description" content="Um roteiro em português para passar da descoberta à comparação: referências visuais, medidas, fotos QC e custos de envio.">
+  <meta property="og:site_name" content="Caderno de escolhas">
+  <meta property="og:image" content="https://media.gucci.com/style/DarkGray_Center_0_0_600x314/1791457245/865352_3G001_9060_001_100_0000_Light-printed-silk-twill-diamond-scarf.jpg">
+  <meta property="og:image:alt" content="Lenço Gucci Flora multicolorido, em formato de losango.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CNShopper spreadsheet: escolher, comparar e verificar">
+  <meta name="twitter:description" content="Medidas, referências visuais e perguntas úteis antes de escolher sapatos, roupa ou acessórios.">
+  <meta name="twitter:image" content="https://media.gucci.com/style/DarkGray_Center_0_0_600x314/1791457245/865352_3G001_9060_001_100_0000_Light-printed-silk-twill-diamond-scarf.jpg">
+  <link rel="preconnect" href="https://media.gucci.com" crossorigin>
+  <link rel="preload" as="image" href="https://media.gucci.com/style/DarkGray_Center_0_0_600x314/1791457245/865352_3G001_9060_001_100_0000_Light-printed-silk-twill-diamond-scarf.jpg" fetchpriority="high">
+  <!-- index.html. Definir o canonical com o URL público deste ficheiro após escolher o domínio de publicação. -->
+  <style>
+    :root{
+      --paper:#fff9f2;
+      --ink:#382d28;
+      --muted:#6c5950;
+      --accent:#9b402f;
+      --wash:#f5e3d6;
+      --line:#dec9b9;
+      --white:#fff;
+      --soft:#eee9e1;
+      --radius:18px
+    }
+    *{box-sizing:border-box}
+    html{color-scheme:light}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased
+    }
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible,summary:focus-visible{
+      outline:3px solid var(--accent);
+      outline-offset:5px
+    }
+    a:hover{text-decoration:underline}
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3,p,figure,dl{margin:0}
+    h1,h2,h3{line-height:1.15;text-wrap:balance}
+    h1{
+      font-size:clamp(2.5rem,6.4vw,5.7rem);
+      font-weight:730;
+      letter-spacing:-.065em;
+      max-width:1050px;
+      margin:14px auto 22px
+    }
+    h1 span{display:block;color:var(--accent)}
+    h2{
+      font-size:clamp(1.65rem,3.1vw,2.65rem);
+      letter-spacing:-.035em
+    }
+    h3{font-size:1.25rem;letter-spacing:-.015em}
+    p+p{margin-top:14px}
+    .wrap{
+      width:min(1180px,calc(100% - 40px));
+      margin-inline:auto
+    }
+    .masthead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:24px 0;
+      border-bottom:1px solid var(--line)
+    }
+    .brand{
+      font-weight:800;
+      text-decoration:none;
+      letter-spacing:-.035em;
+      font-size:1.2rem
+    }
+    .brand small{
+      display:block;
+      font-size:.68rem;
+      letter-spacing:.13em;
+      font-weight:600;
+      text-transform:uppercase;
+      color:var(--muted)
+    }
+    .edition{
+      font-size:.78rem;
+      color:var(--muted);
+      text-align:right
+    }
+    .kicker{
+      font-size:.72rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:var(--accent)
+    }
+    .directory{padding:23px 0}
+    .directory-label{
+      font-size:.78rem;
+      color:var(--muted);
+      margin-bottom:10px
+    }
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:8px
+    }
+    .categories a{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-height:52px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      text-decoration:none;
+      font-size:.84rem;
+      background:var(--white)
+    }
+    .categories a:hover{
+      border-color:var(--accent);
+      background:var(--wash)
+    }
+    .categories b{
+      font-size:.66rem;
+      color:var(--accent);
+      font-variant-numeric:tabular-nums
+    }
+    .intro{text-align:center;padding:35px 0 25px}
+    .intro .lede{
+      max-width:720px;
+      margin:auto;
+      font-size:1.08rem;
+      color:var(--muted)
+    }
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 22px;
+      background:var(--accent);
+      color:var(--white);
+      border-radius:999px;
+      font-weight:750;
+      text-decoration:none
+    }
+    .intro .button{margin-top:24px}
+    .notice{
+      font-size:.79rem;
+      color:var(--muted);
+      max-width:730px;
+      margin:16px auto 0
+    }
+    .cover{
+      display:grid;
+      grid-template-columns:1fr 2fr 1fr;
+      align-items:center;
+      margin:26px 0 0;
+      border-block:1px solid var(--line);
+      background:var(--wash)
+    }
+    .cover-note{padding:26px;font-size:.87rem}
+    .cover-note strong{
+      display:block;
+      color:var(--accent);
+      font-size:2rem;
+      line-height:1.2;
+      margin-bottom:10px
+    }
+    .cover figure{background:#e7e7e7}
+    .cover img{
+      width:100%;
+      aspect-ratio:600/314;
+      object-fit:contain
+    }
+    figcaption{
+      font-size:.75rem;
+      line-height:1.5;
+      color:var(--muted);
+      padding:12px 15px
+    }
+    .cover figcaption{background:var(--paper)}
+    .answer{
+      display:grid;
+      grid-template-columns:1fr 2.2fr;
+      gap:35px;
+      padding:38px 0;
+      border-bottom:1px solid var(--line)
+    }
+    .answer h2{font-size:1.5rem}
+    .answer p{max-width:760px}
+    .section{
+      padding:60px 0;
+      border-bottom:1px solid var(--line)
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:30px;
+      margin-bottom:28px
+    }
+    .section-head p{
+      max-width:430px;
+      color:var(--muted);
+      font-size:.92rem
+    }
+    .kicker+h2{margin-top:9px}
+    .visuals{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:15px
+    }
+    .visuals figure{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:var(--white)
+    }
+    .visuals .frame{
+      background:var(--soft);
+      height:250px;
+      display:grid;
+      place-items:center;
+      overflow:hidden
+    }
+    .visuals img{
+      width:100%;
+      height:100%;
+      object-fit:contain
+    }
+    .visuals figcaption strong{
+      display:block;
+      font-size:.96rem;
+      color:var(--ink);
+      margin-bottom:5px
+    }
+    .visuals figcaption span{
+      display:block;
+      margin-top:8px;
+      font-size:.68rem
+    }
+    .editorial-note{
+      font-size:.81rem;
+      color:var(--muted);
+      margin-top:18px;
+      max-width:850px
+    }
+    .spread{
+      display:grid;
+      grid-template-columns:230px 1fr;
+      gap:50px
+    }
+    .margin-note{color:var(--muted);font-size:.88rem}
+    .margin-note h2{
+      color:var(--accent);
+      margin:8px 0 18px;
+      font-size:2rem
+    }
+    .article{
+      padding:0 0 32px;
+      margin-bottom:32px;
+      border-bottom:1px solid var(--line)
+    }
+    .article:last-child{
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0
+    }
+    .article h3{font-size:1.55rem;margin:10px 0 16px}
+    .article .summary{font-size:1rem;margin-bottom:20px}
+    .number{
+      display:inline-block;
+      border:1px solid var(--accent);
+      color:var(--accent);
+      border-radius:50%;
+      font-size:.76rem;
+      font-weight:800;
+      width:32px;
+      height:32px;
+      line-height:30px;
+      text-align:center
+    }
+    .notes{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px 28px
+    }
+    .notes dt{
+      font-size:.91rem;
+      font-weight:750;
+      line-height:1.4
+    }
+    .notes dd{
+      margin:5px 0 0;
+      color:var(--muted);
+      font-size:.88rem
+    }
+    .callout{
+      background:var(--wash);
+      padding:26px;
+      border-radius:var(--radius);
+      margin-top:25px
+    }
+    .callout strong{color:var(--accent)}
+    .table-scroll{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:12px
+    }
+    table{
+      border-collapse:collapse;
+      width:100%;
+      min-width:620px;
+      font-size:.88rem;
+      text-align:left;
+      background:var(--white)
+    }
+    caption{
+      padding:18px;
+      text-align:left;
+      font-weight:750;
+      background:var(--wash)
+    }
+    th,td{
+      padding:15px 18px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top
+    }
+    thead th{
+      background:var(--paper);
+      font-size:.78rem;
+      color:var(--accent)
+    }
+    tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+    .faq-layout{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:55px
+    }
+    details{border-bottom:1px solid var(--line)}
+    summary{
+      cursor:pointer;
+      padding:18px 6px;
+      font-weight:750;
+      line-height:1.5
+    }
+    details p{
+      padding:0 6px 22px;
+      color:var(--muted);
+      font-size:.94rem
+    }
+    details[open]>summary{color:var(--accent)}
+    .research{
+      font-size:.84rem;
+      color:var(--muted);
+      padding:30px 0
+    }
+    .research details{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:0 14px
+    }
+    .research details>p{padding-inline:6px}
+    .research .table-scroll{margin-bottom:20px}
+    .research td:first-child{overflow-wrap:anywhere}
+    .closing{
+      background:var(--accent);
+      color:var(--white);
+      padding:40px;
+      border-radius:24px;
+      display:flex;
+      gap:30px;
+      align-items:center;
+      justify-content:space-between;
+      margin:20px 0 40px
+    }
+    .closing p{
+      max-width:600px;
+      margin-top:12px;
+      color:#fff0e6
+    }
+    .closing .button{
+      background:var(--white);
+      color:var(--accent);
+      flex-shrink:0
+    }
+    footer{
+      padding:25px 0 35px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.78rem
+    }
+    footer p{max-width:900px}
+    @media(min-width:1000px){
+      .margin-note{
+        position:sticky;
+        top:24px;
+        align-self:start
+      }
+    }
+    @media(max-width:900px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .cover{grid-template-columns:1fr 2fr}
+      .cover-note:last-child{display:none}
+      .visuals{grid-template-columns:1fr 1fr}
+      .spread{grid-template-columns:180px 1fr;gap:25px}
+      .faq-layout{gap:28px}
+      .notes{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:16px}
+    }
+    @media(max-width:600px){
+      .wrap{width:calc(100% - 28px)}
+      .masthead{padding:18px 0}
+      .brand{font-size:1rem}
+      .edition{font-size:.67rem}
+      .categories{grid-template-columns:1fr 1fr}
+      .categories a{
+        font-size:.77rem;
+        padding:10px;
+        overflow-wrap:anywhere
+      }
+      .intro{padding-top:25px}
+      h1{letter-spacing:-.05em}
+      .intro .lede{font-size:1rem}
+      .cover{display:block}
+      .cover-note{padding:18px 22px}
+      .cover-note strong{font-size:1.4rem}
+      .cover-note p{font-size:.85rem}
+      .cover figure{width:100%}
+      .answer,.spread,.faq-layout{
+        grid-template-columns:1fr;
+        gap:22px
+      }
+      .section{padding:38px 0}
+      .visuals{gap:10px}
+      .visuals .frame{height:210px}
+      .visuals figcaption{padding:12px}
+      .visuals figcaption strong{font-size:.84rem}
+      .closing{display:block;padding:27px}
+      .closing .button{margin-top:22px}
+      .margin-note{max-width:520px}
+      .research table{min-width:570px}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .button,.categories a{
+        transition:background-color .15s ease
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"#pagina",
+        "name":"CNShopper spreadsheet: escolher, comparar e verificar",
+        "description":"Guia independente em português para comparar referências de sapatos, roupa e acessórios, verificar medidas e fotos QC e organizar custos.",
+        "inLanguage":"pt",
+        "about":{
+          "@type":"Thing",
+          "name":"CNShopper spreadsheet"
+        },
+        "hasPart":[
+          {"@id":"#sapatos"},
+          {"@id":"#roupa"},
+          {"@id":"#qc"},
+          {"@id":"#custos"},
+          {"@id":"#perguntas"}
+        ]
+      },
+      {
+        "@type":"Article",
+        "@id":"#sapatos",
+        "headline":"CNShopper spreadsheet para sapatos: começar pelo ajuste",
+        "inLanguage":"pt",
+        "description":"Como comparar medidas, formas, materiais e fotografias antes de selecionar um par.",
+        "isPartOf":{"@id":"#pagina"}
+      },
+      {
+        "@type":"Article",
+        "@id":"#roupa",
+        "headline":"CNShopper spreadsheet de roupa: ler o corte",
+        "inLanguage":"pt",
+        "description":"Como interpretar medidas de peças, composição, acabamento e diferenças entre variantes.",
+        "isPartOf":{"@id":"#pagina"}
+      },
+      {
+        "@type":"Article",
+        "@id":"#qc",
+        "headline":"Fotos QC no CNShopper spreadsheet: observar com contexto",
+        "inLanguage":"pt",
+        "description":"Como relacionar fotografias com uma referência específica e reconhecer os limites da inspeção visual.",
+        "isPartOf":{"@id":"#pagina"}
+      },
+      {
+        "@type":"Article",
+        "@id":"#custos",
+        "headline":"CNShopper spreadsheet e custos de envio: fechar as contas",
+        "inLanguage":"pt",
+        "description":"Como distinguir preço do artigo, transporte, serviços, conversão cambial e condições de devolução.",
+        "isPartOf":{"@id":"#pagina"}
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"#perguntas",
+        "inLanguage":"pt",
+        "isPartOf":{"@id":"#pagina"},
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"O que é um CNShopper spreadsheet?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"É uma lista ou um diretório de referências de produtos associado à pesquisa de compras através do CNShopper. Pode aparecer numa folha de cálculo ou num website. Cada referência precisa de ser confirmada no anúncio de origem."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Este guia é oficial do CNShopper?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Não. É um guia editorial independente, sem afiliação oficial ao CNShopper ou às marcas apresentadas. Os links gerais abrem a HIPOBUYFIND; os links de categorias abrem as categorias indicadas nessa plataforma."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"As imagens provam a autenticidade dos produtos?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Não. As imagens de marcas nesta página são referências visuais. Fotografias comerciais ou QC não substituem documentação de proveniência nem uma avaliação de autenticidade."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Como escolher o tamanho correto?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Compare a tabela do anúncio com uma peça ou um par que já lhe assente bem. Confirme se as medidas são do corpo, da peça, do pé ou da palmilha e mantenha a mesma unidade de comparação."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"O preço indicado numa lista inclui o envio?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Não necessariamente. Confirme separadamente o artigo, o transporte interno, os serviços aplicáveis e o envio internacional. O custo depende também da variante, da embalagem, do destino e da forma de cobrança do transporte."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"O que fazer quando um link muda de produto?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Retire a referência da seleção até confirmar o identificador, a variante e a descrição atuais. Um link que abre normalmente pode ter sido reutilizado para outro artigo."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/zyycv/">
+</head>
+<body>
+  <header class="wrap masthead">
+    <a class="brand" href="https://www.hipobuyfind.com">
+      Caderno de escolhas
+      <small>Referências · medidas · contexto</small>
+    </a>
+    <p class="edition">
+      Edição em português<br>
+      <time datetime="2026-11-04">4 de novembro de 2026</time>
+    </p>
+  </header>
+
+  <nav class="wrap directory" aria-label="Categorias de produtos">
+    <p class="directory-label">Comece pelo tipo de peça — categorias na HIPOBUYFIND</p>
+    <div class="categories">
+      <a href="https://hipobuyfind.com/category-911-Shoes.html"><b>01</b> Sapatos</a>
+      <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html"><b>02</b> Sweatshirts e camisolas</a>
+      <a href="https://hipobuyfind.com/category-913-T-Shirts.html"><b>03</b> T-shirts</a>
+      <a href="https://hipobuyfind.com/category-914-Jackets.html"><b>04</b> Casacos</a>
+      <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html"><b>05</b> Calças e calções</a>
+      <a href="https://hipobuyfind.com/category-916-Headwear.html"><b>06</b> Chapéus e bonés</a>
+      <a href="https://hipobuyfind.com/category-917-Sets.html"><b>07</b> Conjuntos</a>
+      <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html"><b>08</b> Roupa interior</a>
+      <a href="https://hipobuyfind.com/category-919-Jersey.html"><b>09</b> Camisolas desportivas</a>
+      <a href="https://hipobuyfind.com/category-920-Accessories.html"><b>10</b> Acessórios</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="titulo">
+      <p class="kicker">Menos indecisão, mais critérios</p>
+      <h1 id="titulo">
+        CNShopper spreadsheet
+        <span>Do olhar à escolha.</span>
+      </h1>
+      <p class="lede">Uma referência visual desperta interesse. As medidas, os detalhes do anúncio e as condições de compra ajudam a decidir. Este guia liga essas etapas, sem transformar uma fotografia numa promessa.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Explorar referências na HIPOBUYFIND →</a>
+      <p class="notice">Guia independente. Os destinos desta página são a HIPOBUYFIND e as suas categorias; não são links diretos para o CNShopper.</p>
+    </section>
+
+    <div class="cover">
+      <div class="cover-note">
+        <strong>O detalhe conta.</strong>
+        <p>Num lenço, observe o desenho completo e as bordas. Numa peça de roupa, acrescente as medidas e o corte.</p>
+      </div>
+      <figure>
+        <img
+          src="https://media.gucci.com/style/DarkGray_Center_0_0_600x314/1791457245/865352_3G001_9060_001_100_0000_Light-printed-silk-twill-diamond-scarf.jpg"
+          alt="Lenço Gucci Flora multicolorido em formato de losango, apresentado sobre fundo cinzento."
+          width="600"
+          height="314"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <figcaption>Referência de capa: lenço Gucci Flora. Imagem de produto da Gucci; utilização editorial, sem indicação de disponibilidade.</figcaption>
+      </figure>
+      <div class="cover-note">
+        <strong>Compare por função.</strong>
+        <p>Antes da marca, defina o uso: caminhar, vestir por camadas, proteger a cabeça ou acrescentar um acessório.</p>
+      </div>
+    </div>
+
+    <section class="answer" aria-labelledby="definicao">
+      <h2 id="definicao">O que se procura numa spreadsheet?</h2>
+      <div>
+        <p>Um <strong>CNShopper spreadsheet</strong> é uma lista ou um diretório de referências de produtos associado à pesquisa de compras através do CNShopper. Pode estar numa folha de cálculo ou num website. O seu valor está em facilitar a comparação entre anúncios, variantes e informação disponível.</p>
+        <p>Uma boa seleção conserva o link de origem, a data de consulta, a variante e as dúvidas por resolver. Um nome de marca ou uma imagem atraente, por si só, não confirma o conteúdo de um anúncio.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="referencias">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Quatro maneiras de observar</p>
+          <h2 id="referencias">A imagem começa a conversa.</h2>
+        </div>
+        <p>As referências abaixo ilustram categorias e pontos de atenção. Não são anúncios de venda nem fotografias QC de uma encomenda.</p>
+      </div>
+
+      <div class="visuals">
+        <figure>
+          <div class="frame">
+            <img
+              src="https://assets.footlocker.com/is/image/FLDM/V3337006_01?wid=600&amp;hei=600&amp;fmt=webp"
+              alt="Sapatilha Nike Air Max Dn preta, vista de perfil."
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <figcaption>
+            <strong>Nike · proporção e ajuste</strong>
+            Compare a forma, a sola e a tabela de tamanhos do anúncio.
+            <span>Imagem: Foot Locker · Air Max Dn.</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="frame">
+            <img
+              src="https://sg.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-gradient-cotton-t-shirt--HQY42WFSB904_PM1_Worn%20view.jpg"
+              alt="Modelo com T-shirt Louis Vuitton preta e branca com padrão Monogram em degradé."
+              width="600"
+              height="750"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <figcaption>
+            <strong>Louis Vuitton · leitura do corte</strong>
+            Uma fotografia vestida ajuda a observar proporções; não substitui medidas.
+            <span>Imagem: Louis Vuitton · Gradient Cotton T-Shirt.</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="frame">
+            <img
+              src="https://assets.hermes.com/is/image/hermesproduct/242083N%2002_front_wm_102?%24product_default_bg%24="
+              alt="Boné Hermès Miles H Cut preto, visto de frente, com detalhe H."
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <figcaption>
+            <strong>Hermès · formato e contorno</strong>
+            Num boné, confira o perímetro, a profundidade e o ajuste posterior.
+            <span>Imagem: Hermès · Miles H Cut.</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <div class="frame">
+            <img
+              src="https://assets.christiandior.com/is/image/diorprod/B3368HOMMTD000_SBG_E01-2?%24r4x5_raw%24=&amp;bfc=on&amp;crop=0%2C0%2C4000%2C5000&amp;hei=750&amp;qlt=75&amp;scale=1&amp;wid=600"
+              alt="Pulseira Dior Link com elos metálicos de acabamento prateado e fecho de mosquetão."
+              width="600"
+              height="750"
+              loading="lazy"
+              decoding="async">
+          </div>
+          <figcaption>
+            <strong>Dior · escala e fecho</strong>
+            Procure o comprimento útil, a composição declarada e vistas do fecho.
+            <span>Imagem: Dior · Dior Link.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="editorial-note">Nike, Louis Vuitton, Gucci, Hermès e Dior são marcas dos respetivos titulares. As imagens não comprovam a autenticidade, o stock ou a correspondência de produtos apresentados noutros sites. Esta publicação não tem afiliação oficial com essas marcas.</p>
+    </section>
+
+    <section class="section spread" aria-labelledby="guias">
+      <aside class="margin-note">
+        <p class="kicker">Dossiê de consulta</p>
+        <h2 id="guias">Escolher é fazer boas perguntas.</h2>
+        <p>Quatro guias curtos desenvolvem 24 dúvidas de pesquisa. Use os critérios que se aplicam ao artigo que está a comparar.</p>
+        <p>Os temas secundários são sapatos, roupa, fotos QC e custos de envio, sempre ligados à referência original.</p>
+      </aside>
+
+      <div>
+        <article class="article" id="sapatos" aria-labelledby="sapatos-titulo">
+          <span class="number" aria-hidden="true">01</span>
+          <h3 id="sapatos-titulo">CNShopper spreadsheet para sapatos: começar pelo ajuste</h3>
+          <p class="summary">Escolha primeiro a utilização e o ajuste pretendido. Depois compare a mesma variante em todos os registos: mudar a cor, o material ou o tamanho pode mudar o que está a avaliar.</p>
+          <dl class="notes">
+            <div>
+              <dt>Como comparar tamanhos de sapatilhas?</dt>
+              <dd>Leia a tabela específica. Uma equivalência EU, US ou UK não substitui a medida indicada pelo vendedor.</dd>
+            </div>
+            <div>
+              <dt>Medida do pé ou comprimento da palmilha?</dt>
+              <dd>Confirme qual das duas aparece no anúncio. São medidas diferentes e não devem ser comparadas diretamente.</dd>
+            </div>
+            <div>
+              <dt>Como avaliar a largura do calçado?</dt>
+              <dd>Procure informação sobre a forma e a largura. Uma fotografia lateral raramente esclarece o espaço para os dedos.</dd>
+            </div>
+            <div>
+              <dt>Que fotografias pedir de uma sapatilha?</dt>
+              <dd>Peça vistas dos dois pés, frente, traseira, sola e etiqueta de tamanho, relacionadas com a variante escolhida.</dd>
+            </div>
+            <div>
+              <dt>Como distinguir variantes do mesmo modelo?</dt>
+              <dd>Registe o código, a cor e o material. Um título semelhante pode agrupar versões com características diferentes.</dd>
+            </div>
+            <div>
+              <dt>Como guardar uma seleção de sapatos?</dt>
+              <dd>Anote link, medida, variante, data e dúvida principal. Mantenha apenas referências que consiga voltar a identificar.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="article" id="roupa" aria-labelledby="roupa-titulo">
+          <span class="number" aria-hidden="true">02</span>
+          <h3 id="roupa-titulo">CNShopper spreadsheet de roupa: ler o corte</h3>
+          <p class="summary">Uma peça pode estar corretamente etiquetada e ter proporções diferentes das que espera. Compare as medidas com roupa que já usa, estendida da mesma maneira e sem esticar o tecido.</p>
+          <dl class="notes">
+            <div>
+              <dt>Como escolher uma T-shirt pelo comprimento?</dt>
+              <dd>Confirme o ponto de início da medição e compare com uma T-shirt sua. Considere também a largura e o ombro.</dd>
+            </div>
+            <div>
+              <dt>Como medir uma sweatshirt com capuz?</dt>
+              <dd>Registe peito, comprimento e manga. Verifique se a tabela apresenta largura plana ou perímetro completo.</dd>
+            </div>
+            <div>
+              <dt>Que folga considerar num casaco?</dt>
+              <dd>Compare com um casaco que permita as camadas que pretende usar. Não acrescente uma folga fixa sem conhecer o corte.</dd>
+            </div>
+            <div>
+              <dt>Como comparar cintura e entreperna?</dt>
+              <dd>Nas calças, separe cintura, altura do gancho e entreperna. Confirme se a cintura foi medida relaxada ou esticada.</dd>
+            </div>
+            <div>
+              <dt>Como verificar a composição de uma peça?</dt>
+              <dd>Leia a descrição e a etiqueta disponível. A aparência de um tecido numa foto não determina a sua composição.</dd>
+            </div>
+            <div>
+              <dt>Como comparar duas cores da mesma roupa?</dt>
+              <dd>Confirme que partilham a mesma ficha e tabela. Iluminação, edição e ecrã podem alterar a perceção da cor.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="article" id="qc" aria-labelledby="qc-titulo">
+          <span class="number" aria-hidden="true">03</span>
+          <h3 id="qc-titulo">Fotos QC no CNShopper spreadsheet: observar com contexto</h3>
+          <p class="summary">QC significa controlo de qualidade. As fotografias de inspeção podem mostrar o aspeto visível de um artigo numa determinada etapa. Para serem úteis, precisam de corresponder à referência e à variante que está a analisar.</p>
+          <dl class="notes">
+            <div>
+              <dt>Como relacionar fotos QC com um anúncio?</dt>
+              <dd>Compare o identificador da origem, a variante e a data. O nome genérico do produto não basta.</dd>
+            </div>
+            <div>
+              <dt>O que observar nas costuras?</dt>
+              <dd>Procure zonas abertas, fios soltos e diferenças entre partes equivalentes. Solicite outra vista quando a imagem for pouco nítida.</dd>
+            </div>
+            <div>
+              <dt>Como verificar detalhes de um boné?</dt>
+              <dd>Confira o contorno, as costuras, a pala e o ajuste. Acrescente a medida do perímetro quando estiver disponível.</dd>
+            </div>
+            <div>
+              <dt>Que detalhes comparar numa pulseira?</dt>
+              <dd>Observe os elos, o fecho e o comprimento. A cor do metal numa imagem não certifica a sua composição.</dd>
+            </div>
+            <div>
+              <dt>O que fazer quando não existem fotos QC?</dt>
+              <dd>Registe a ausência de evidência. Fotografias comerciais não devem ser apresentadas como inspeção de uma unidade recebida.</dd>
+            </div>
+            <div>
+              <dt>Fotos QC confirmam autenticidade?</dt>
+              <dd>Não. Podem ajudar a observar detalhes e defeitos aparentes; não substituem documentação de proveniência.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="article" id="custos" aria-labelledby="custos-titulo">
+          <span class="number" aria-hidden="true">04</span>
+          <h3 id="custos-titulo">CNShopper spreadsheet e custos de envio: fechar as contas</h3>
+          <p class="summary">Compare o custo de obter a mesma variante no mesmo destino. Não trate o preço guardado numa lista como orçamento final: confirme as condições atuais antes de avançar.</p>
+          <dl class="notes">
+            <div>
+              <dt>O preço do produto inclui transporte interno?</dt>
+              <dd>Verifique essa parcela no destino. Não deduza a inclusão a partir de uma imagem ou de um valor isolado.</dd>
+            </div>
+            <div>
+              <dt>Como estimar o envio internacional?</dt>
+              <dd>Use o destino, a embalagem e o peso disponíveis na cotação. Guarde a data e o serviço considerado.</dd>
+            </div>
+            <div>
+              <dt>Peso real e volumétrico são iguais?</dt>
+              <dd>Não. O volumétrico relaciona-se com as dimensões. Confirme como o serviço escolhido determina o peso cobrado.</dd>
+            </div>
+            <div>
+              <dt>Como comparar valores em moedas diferentes?</dt>
+              <dd>Registe a moeda original e a taxa efetivamente aplicada pelo pagamento, incluindo eventuais encargos apresentados.</dd>
+            </div>
+            <div>
+              <dt>Como planear compras para Portugal ou Brasil?</dt>
+              <dd>Faça cotações separadas para cada destino e confirme as condições locais aplicáveis. Não reutilize o total de outro país.</dd>
+            </div>
+            <div>
+              <dt>Quando verificar as condições de devolução?</dt>
+              <dd>Antes do pagamento e antes de aprovar uma etapa posterior. Guarde prazos, exclusões e custos indicados para o seu caso.</dd>
+            </div>
+          </dl>
+          <div class="callout">
+            <strong>Uma conta legível:</strong> artigo + transporte interno + serviços aplicáveis + envio internacional + outros encargos aplicáveis ao destino. Deixe cada parcela por confirmar até existir informação concreta.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="registo">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Da leitura ao registo</p>
+          <h2 id="registo">Uma linha útil vale mais que dez links.</h2>
+        </div>
+        <p>Não precisa de uma lista enorme. Precisa de conseguir explicar o que escolheu e o que falta verificar.</p>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Campos para organizar uma comparação" tabindex="0">
+        <table>
+          <caption>Modelo de comparação — campos a preencher com dados do anúncio</caption>
+          <thead>
+            <tr>
+              <th scope="col">Campo</th>
+              <th scope="col">O que registar</th>
+              <th scope="col">Pergunta antes de avançar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Origem</th>
+              <td>Link e identificador do artigo</td>
+              <td>Continua a mostrar o mesmo produto?</td>
+            </tr>
+            <tr>
+              <th scope="row">Variante</th>
+              <td>Cor, tamanho e material declarado</td>
+              <td>É a opção que estou a comparar?</td>
+            </tr>
+            <tr>
+              <th scope="row">Medidas</th>
+              <td>Valor, unidade e método de medição</td>
+              <td>Posso comparar com uma peça minha?</td>
+            </tr>
+            <tr>
+              <th scope="row">Imagens</th>
+              <td>Origem, data e tipo de fotografia</td>
+              <td>São comerciais ou de inspeção?</td>
+            </tr>
+            <tr>
+              <th scope="row">Custo</th>
+              <td>Parcelas confirmadas e moeda</td>
+              <td>Que valores ainda estão em falta?</td>
+            </tr>
+            <tr>
+              <th scope="row">Revisão</th>
+              <td>Data de consulta e dúvida pendente</td>
+              <td>O que mudou desde a última visita?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section faq-layout" aria-labelledby="faq-titulo">
+      <div>
+        <p class="kicker">Respostas diretas</p>
+        <h2 id="faq-titulo">Antes do próximo clique.</h2>
+      </div>
+      <div>
+        <details open>
+          <summary>O que é um CNShopper spreadsheet?</summary>
+          <p>É uma lista ou um diretório de referências de produtos associado à pesquisa de compras através do CNShopper. Pode aparecer numa folha de cálculo ou num website. Cada referência precisa de ser confirmada no anúncio de origem.</p>
+        </details>
+        <details>
+          <summary>Este guia é oficial do CNShopper?</summary>
+          <p>Não. É um guia editorial independente, sem afiliação oficial ao CNShopper ou às marcas apresentadas. Os links gerais abrem a HIPOBUYFIND; os links de categorias abrem as categorias indicadas nessa plataforma.</p>
+        </details>
+        <details>
+          <summary>As imagens provam a autenticidade dos produtos?</summary>
+          <p>Não. As imagens de marcas nesta página são referências visuais. Fotografias comerciais ou QC não substituem documentação de proveniência nem uma avaliação de autenticidade.</p>
+        </details>
+        <details>
+          <summary>Como escolher o tamanho correto?</summary>
+          <p>Compare a tabela do anúncio com uma peça ou um par que já lhe assente bem. Confirme se as medidas são do corpo, da peça, do pé ou da palmilha e mantenha a mesma unidade de comparação.</p>
+        </details>
+        <details>
+          <summary>O preço indicado numa lista inclui o envio?</summary>
+          <p>Não necessariamente. Confirme separadamente o artigo, o transporte interno, os serviços aplicáveis e o envio internacional. O custo depende também da variante, da embalagem, do destino e da forma de cobrança do transporte.</p>
+        </details>
+        <details>
+          <summary>O que fazer quando um link muda de produto?</summary>
+          <p>Retire a referência da seleção até confirmar o identificador, a variante e a descrição atuais. Um link que abre normalmente pode ter sido reutilizado para outro artigo.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="research" aria-label="Notas da pesquisa editorial">
+      <details>
+        <summary>Pesquisa editorial: 10 sites relacionados e temas observados</summary>
+        <p>A pesquisa por “CNShopper spreadsheet” reuniu os sites abaixo. Não foi possível confirmar diretamente a primeira página do Google nem a sua ordem; esta lista não representa um ranking verificado. Os temas são uma síntese editorial do conteúdo consultado, não uma extração de meta keywords nem dados de volume de pesquisa.</p>
+        <div class="table-scroll" role="region" aria-label="Fontes e temas de pesquisa" tabindex="0">
+          <table>
+            <caption>Fontes consultadas para orientar os temas — sem reprodução de textos</caption>
+            <thead>
+              <tr>
+                <th scope="col">Site</th>
+                <th scope="col">Temas observados</th>
+                <th scope="col">Aplicação neste guia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><cite>cnshopperwithqc.com</cite></td>
+                <td>Referências por categoria, fotos QC, variantes</td>
+                <td>Relacionar a imagem com o anúncio específico.</td>
+              </tr>
+              <tr>
+                <td><cite>cnshopperspreadsheet.co</cite></td>
+                <td>Pesquisa independente, origem, custos</td>
+                <td>Separar descoberta e confirmação.</td>
+              </tr>
+              <tr>
+                <td><cite>spreadsheet-cnshopper.com</cite></td>
+                <td>Campos de uma lista, medidas, notas</td>
+                <td>Organizar um registo comparável.</td>
+              </tr>
+              <tr>
+                <td><cite>rep.tools</cite></td>
+                <td>Links de origem, conversão, fluxo de compra</td>
+                <td>Conservar a referência original.</td>
+              </tr>
+              <tr>
+                <td><cite>jadeship.com</cite></td>
+                <td>Pesquisa em folhas públicas, categorias, preços</td>
+                <td>Tratar resultados como pontos de partida.</td>
+              </tr>
+              <tr>
+                <td><cite>cnshopperspreadsheet.net</cite></td>
+                <td>Destino do envio, estimativas, catálogo</td>
+                <td>Comparar custos por país de destino.</td>
+              </tr>
+              <tr>
+                <td><cite>cnshopper-spreadsheet.com</cite></td>
+                <td>Seleção de produtos, categorias, links</td>
+                <td>Rever a informação atual de cada variante.</td>
+              </tr>
+              <tr>
+                <td><cite>cnshopperspreadsheet.space</cite></td>
+                <td>Guias educativos, QC, organização</td>
+                <td>Explicar critérios antes do clique.</td>
+              </tr>
+              <tr>
+                <td><cite>cnshopper.co.uk</cite></td>
+                <td>Comparação de referências, estado dos links</td>
+                <td>Registar a data e o que falta verificar.</td>
+              </tr>
+              <tr>
+                <td><cite>findhaul.com</cite></td>
+                <td>Rastreio da origem, limites da evidência</td>
+                <td>Distinguir um link de uma confirmação.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A seleção de temas não endossa estes sites, os seus vendedores ou as suas alegações comerciais. Não foram importados preços, descontos, avaliações nem promessas de serviço.</p>
+      </details>
+    </section>
+
+    <section class="closing" aria-labelledby="continuar">
+      <div>
+        <h2 id="continuar">Escolha uma categoria.<br>Leve consigo os critérios.</h2>
+        <p>Explore referências, confirme o anúncio e conserve as medidas e as dúvidas que realmente importam para a sua escolha.</p>
+      </div>
+      <a class="button" href="https://www.hipobuyfind.com">Continuar na HIPOBUYFIND →</a>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p><strong>Caderno de escolhas · edição em português.</strong> Conteúdo informativo independente. Não processamos compras nesta página. As condições comerciais devem ser confirmadas no destino antes de qualquer decisão.</p>
+    <p>As referências a marcas servem para identificação e contexto visual. Não existe afiliação oficial declarada com o CNShopper, Nike, Louis Vuitton, Gucci, Hermès ou Dior.</p>
+  </footer>
+</body>
+</html>
